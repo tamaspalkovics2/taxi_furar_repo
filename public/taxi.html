@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Fuvar Nyilvántartás</title>
+    <style>
+        .form-container {
+            width: 400px;
+            margin: 50px auto;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <fieldset>
+            <legend>Taxi Fuvar Rögzítés</legend>
+            <form action="" id="fuvarForm">
+                <p>
+                    <label for="fuvar_id">Fuvar ID:</label>
+                    <input type="number" name="fuvar_id" id="fuvar_id" required placeholder="Fuvar azonosító...">
+                </p>
+                <p>
+                    <label for="indulasi_hely">Indulási hely:</label>
+                    <input type="text" name="indulasi_hely" id="indulasi_hely" required placeholder="Pl. Budapest">
+                </p>
+                <p>
+                    <label for="cel">Cél:</label>
+                    <input type="text" name="cel" id="cel" required placeholder="Pl. Debrecen">
+                </p>
+                <p>
+                    <label for="tavolsag">Távolság:</label>
+                    <input type="number" step="0.1" name="tavolsag" id="tavolsag" required placeholder="Pl. 200.5">
+                </p>
+                <p>
+                    <label for="viteldij">Viteldíj:</label>
+                    <input type="number" step="0.1" name="viteldij" id="viteldij" required placeholder="Pl. 15000">
+                </p>
+                <p>
+                    <label for="taxi_id">Taxi ID:</label>
+                    <input type="text" name="taxi_id" id="taxi_id" required placeholder="Pl. TX1234">
+                </p>
+                <p>
+                    <button type="submit">Fuvar Rögzítése</button>
+                </p>
+            </form>
+        </fieldset>
+        <h3>Fuvarok Táblázata</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fuvar ID</th>
+                    <th>Indulási hely</th>
+                    <th>Cél</th>
+                    <th>Távolság</th>
+                    <th>Viteldíj</th>
+                    <th>Taxi ID</th>
+                </tr>
+            </thead>
+            <tbody id="fuvarTable"><!--Ide jönnek az adatok--></tbody>
+        </table>
+    </div>
+
+    <script src="taxi.js"></script>
+</body>
+</html>
